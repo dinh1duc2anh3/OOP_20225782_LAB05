@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import hust.soict.ite6.oop.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
 	public static final int MAX_NUBMERS_ORDERED = 20; // mamximum number of media in a cart
-	ArrayList<Media> itemsOrdered = new ArrayList<Media>(MAX_NUBMERS_ORDERED);
+	ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 	// (list of media )array
 
 	// add 1 media into cart
@@ -129,4 +131,8 @@ public class Cart {
 		itemsOrdered.clear();
 	}
 
+	public ObservableList<Media> getItemsOrdered() {
+	    
+	    return itemsOrdered;
+	}
 }
