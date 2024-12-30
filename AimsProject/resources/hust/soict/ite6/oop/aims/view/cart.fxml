@@ -30,8 +30,8 @@
                             <Menu mnemonicParsing="false" text="Update Store">
                               <items>
                                 <MenuItem fx:id="addBookMenuItem" mnemonicParsing="false" onAction="#handleAddBook" text="Add Book" />
-                                    <MenuItem fx:id="addCdMenuItem" mnemonicParsing="false" onAction="#handleAddCd" text="Add CD" />
-                                    <MenuItem fx:id="addDvdMenuItem" mnemonicParsing="false" onAction="#handleAddDvd" text="Add DVD" />
+                                    <MenuItem mnemonicParsing="false" text="Add CD" />
+                                    <MenuItem mnemonicParsing="false" text="Add DVD" />
                               </items>
                             </Menu>
                             <Menu mnemonicParsing="false" text="Vew Store" />

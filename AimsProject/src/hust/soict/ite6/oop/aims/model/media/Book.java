@@ -1,6 +1,7 @@
 package hust.soict.ite6.oop.aims.model.media;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -18,13 +19,30 @@ public class Book extends Media {
 //		System.out.println("Book " + title + " : id = "+this.getId());
 	}
 	
-	public void addAuthor(String authorName) {
+	public void addSingleAuthor(String authorName) {
         if (!authors.contains(authorName)) { // Check if the author is not already in the list
             authors.add(authorName); // Add the author
             System.out.println("Author " + authorName + " has been added to the book " + getTitle());
         } else {
             System.out.println("Author " + authorName + " is already in the list for book " + getTitle());
         }
+    }
+	
+	public List<String> addAuthorsDevidedByComma(String authorsListDevidedByComma) {
+		//kiem tra chuoi rong hay ko
+    	List<String> authors = new ArrayList<>();
+    	
+    	//author.trim() :  Loại bỏ khoảng trắng thừa author
+    	if (authorsListDevidedByComma != null && !authorsListDevidedByComma.trim().isEmpty() ) {
+    		// Tách theo dấu ',' và bỏ khoảng trắng thừa
+    		String[] authorArray =authorsListDevidedByComma.split("\\s*,\\s*"); 
+    		
+    		//them moi ten tac gia vao danh sach authors
+    		for (String author : authorArray) {
+    			authors.add(author.trim());
+    		}
+    	}
+    	return authors;
     }
 	
 	public void removeAuthor(String authorName) {
