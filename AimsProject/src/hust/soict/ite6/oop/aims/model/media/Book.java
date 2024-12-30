@@ -1,4 +1,4 @@
-package hust.soict.ite6.oop.aims.media;
+package hust.soict.ite6.oop.aims.model.media;
 
 
 import java.util.List;
@@ -6,6 +6,11 @@ import java.util.StringTokenizer;
 
 public class Book extends Media {
 	private List<String> authors;
+	
+	//default Constructor for book
+	public Book(String title) {
+		super(title);
+	}
 	
 	public Book(String title, String category, float cost, List<String> authors) {
 		super(title, category, cost);
@@ -42,6 +47,14 @@ public class Book extends Media {
 		System.out.println("Content Length: " + tokenizer.countTokens() + " tokens"); 
 	}
 	
+	public List<String> getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(List<String> authors) {
+		this.authors = authors;
+	}
+
 	@Override
 	public void play() {
 		System.out.println("Books cant be played");

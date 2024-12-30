@@ -1,4 +1,4 @@
-package hust.soict.ite6.oop.aims.media;
+package hust.soict.ite6.oop.aims.model.media;
 
 import java.util.Comparator;
 import java.util.Objects;
@@ -13,13 +13,20 @@ public abstract class Media {
      
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = new  MediaComparatorByTitleCost();
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = new  MediaComparatorByCostTitle();
-
+    
+    //default constructor for Media
+    public Media(String title) {
+        this.title = title;
+        this.id = ++nbMedia;
+    }
+    
     public Media(String title, String category, float cost) {
         this.title = title;
         this.category = category;
         this.cost = cost;
         this.id = ++nbMedia;
     }
+    
     public int getId() {
         return id;
     }
@@ -37,7 +44,23 @@ public abstract class Media {
     }
     
 
-    public abstract void displayDetails();
+    public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
+
+	public abstract void displayDetails();
 
     public abstract void play();
     

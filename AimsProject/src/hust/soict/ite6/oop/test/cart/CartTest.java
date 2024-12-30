@@ -2,11 +2,11 @@ package hust.soict.ite6.oop.test.cart;
 
 import java.util.Arrays;
 
-import hust.soict.ite6.oop.aims.cart.Cart;
-import hust.soict.ite6.oop.aims.media.Book;
-import hust.soict.ite6.oop.aims.media.CompactDisc;
-import hust.soict.ite6.oop.aims.media.DigitalVideoDisc;
-import hust.soict.ite6.oop.aims.media.Track;
+import hust.soict.ite6.oop.aims.model.cart.Cart;
+import hust.soict.ite6.oop.aims.model.media.Book;
+import hust.soict.ite6.oop.aims.model.media.CompactDisc;
+import hust.soict.ite6.oop.aims.model.media.DigitalVideoDisc;
+import hust.soict.ite6.oop.aims.model.media.Track;
 
 public class CartTest {
     public static void main(String[] args) {

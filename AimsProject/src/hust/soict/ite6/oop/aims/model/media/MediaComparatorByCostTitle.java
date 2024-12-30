@@ -1,4 +1,4 @@
-package hust.soict.ite6.oop.aims.media;
+package hust.soict.ite6.oop.aims.model.media;
 
 import java.util.Comparator;
 

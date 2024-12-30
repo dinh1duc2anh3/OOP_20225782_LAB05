@@ -1,9 +1,9 @@
-package hust.soict.ite6.oop.aims.store;
+package hust.soict.ite6.oop.aims.model.store;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import hust.soict.ite6.oop.aims.media.Media;
+import hust.soict.ite6.oop.aims.model.media.Media;
 
 public class Store {
 	public static final int MAX_NUBMERS_STORED = 100;

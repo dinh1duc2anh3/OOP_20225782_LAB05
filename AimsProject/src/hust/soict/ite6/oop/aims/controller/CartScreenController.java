@@ -1,12 +1,8 @@
-package hust.soict.ite6.oop.aims.screen;
+package hust.soict.ite6.oop.aims.controller;
 
-import java.util.Observable;
-
-import hust.soict.ite6.oop.aims.cart.Cart;
-import hust.soict.ite6.oop.aims.media.Media;
-import hust.soict.ite6.oop.aims.media.Playable;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import hust.soict.ite6.oop.aims.model.cart.Cart;
+import hust.soict.ite6.oop.aims.model.media.Media;
+import hust.soict.ite6.oop.aims.model.media.Playable;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

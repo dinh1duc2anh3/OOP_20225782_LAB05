@@ -1,9 +1,9 @@
-package hust.soict.ite6.oop.aims.cart;
+package hust.soict.ite6.oop.aims.model.cart;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import hust.soict.ite6.oop.aims.media.Media;
+import hust.soict.ite6.oop.aims.model.media.Media;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

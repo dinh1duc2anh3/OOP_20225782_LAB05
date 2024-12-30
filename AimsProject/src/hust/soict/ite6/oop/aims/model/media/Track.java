@@ -1,4 +1,4 @@
-package hust.soict.ite6.oop.aims.media;
+package hust.soict.ite6.oop.aims.model.media;
 
 import java.util.Objects;
 
@@ -22,7 +22,15 @@ public class Track implements Playable {
     
     
 
-    public void play() {
+    public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setLength(int length) {
+		this.length = length;
+	}
+
+	public void play() {
         if (length > 0) {
         	System.out.println("Playing CD: " + this.getTitle() + " (" + this.getLength() + " mins)");
         } else {
