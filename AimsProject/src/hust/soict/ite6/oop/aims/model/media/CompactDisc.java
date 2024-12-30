@@ -1,4 +1,4 @@
-package hust.soict.ite6.oop.aims.media;
+package hust.soict.ite6.oop.aims.model.media;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,13 @@ import java.util.List;
 public class CompactDisc extends Disc implements Playable {
     private String artist;
     private List<Track> tracks = new ArrayList<>();
-
+    
+    
+    //default
+    public CompactDisc( String title) {
+        super(title);
+    }
+    
     public CompactDisc( String title, String category, float cost, String artist, String director,int length) {
         super(title, category, cost, director,length);
         this.artist = artist;
@@ -38,8 +44,26 @@ public class CompactDisc extends Disc implements Playable {
         return tracks.stream().mapToInt(Track::getLength).sum();
     }
     
+    
+    
 
-    @Override
+    public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+
+	public List<Track> getTracks() {
+		return tracks;
+	}
+
+	public void setTracks(List<Track> tracks) {
+		this.tracks = tracks;
+	}
+
+	@Override
     public void displayDetails() {
         System.out.println("CD Title: " + getTitle());
         System.out.println("CD Id: " + getId());
@@ -51,6 +75,8 @@ public class CompactDisc extends Disc implements Playable {
             System.out.println("- " + track.getTitle() + " (" + track.getLength() + " minutes)");
         }
     }
+    
+    
 
     @Override
     public void play() {

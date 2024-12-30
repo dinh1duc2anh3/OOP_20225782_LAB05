@@ -1,9 +1,12 @@
 package hust.soict.ite6.oop.test.store;
 
-import hust.soict.ite6.oop.aims.media.*;
-import hust.soict.ite6.oop.aims.store.Store;
-
 import java.util.Arrays;
+
+import hust.soict.ite6.oop.aims.model.media.Book;
+import hust.soict.ite6.oop.aims.model.media.CompactDisc;
+import hust.soict.ite6.oop.aims.model.media.DigitalVideoDisc;
+import hust.soict.ite6.oop.aims.model.media.Track;
+import hust.soict.ite6.oop.aims.model.store.Store;
 
 public class StoreTest {
     public static void main(String[] args) {

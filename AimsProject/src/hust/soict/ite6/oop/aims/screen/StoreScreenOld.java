@@ -25,14 +25,14 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import hust.soict.ite6.oop.aims.cart.Cart;
-import hust.soict.ite6.oop.aims.media.Book;
-import hust.soict.ite6.oop.aims.media.CompactDisc;
-import hust.soict.ite6.oop.aims.media.DigitalVideoDisc;
-import hust.soict.ite6.oop.aims.media.Media;
-import hust.soict.ite6.oop.aims.media.Playable;
-import hust.soict.ite6.oop.aims.media.Track;
-import hust.soict.ite6.oop.aims.store.Store;
+import hust.soict.ite6.oop.aims.model.cart.Cart;
+import hust.soict.ite6.oop.aims.model.media.Book;
+import hust.soict.ite6.oop.aims.model.media.CompactDisc;
+import hust.soict.ite6.oop.aims.model.media.DigitalVideoDisc;
+import hust.soict.ite6.oop.aims.model.media.Media;
+import hust.soict.ite6.oop.aims.model.media.Playable;
+import hust.soict.ite6.oop.aims.model.media.Track;
+import hust.soict.ite6.oop.aims.model.store.Store;
 
 
 //ban dung awt

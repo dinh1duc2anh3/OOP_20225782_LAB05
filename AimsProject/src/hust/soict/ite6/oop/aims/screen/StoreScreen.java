@@ -1,20 +1,33 @@
 package hust.soict.ite6.oop.aims.screen;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import hust.soict.ite6.oop.aims.model.cart.Cart;
+import hust.soict.ite6.oop.aims.model.media.Book;
+import hust.soict.ite6.oop.aims.model.media.CompactDisc;
+import hust.soict.ite6.oop.aims.model.media.DigitalVideoDisc;
+import hust.soict.ite6.oop.aims.model.media.Media;
+import hust.soict.ite6.oop.aims.model.media.Playable;
+import hust.soict.ite6.oop.aims.model.media.Track;
+import hust.soict.ite6.oop.aims.model.store.Store;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import javafx.stage.Stage;
-import javafx.scene.paint.Color;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import hust.soict.ite6.oop.aims.cart.Cart;
-import hust.soict.ite6.oop.aims.media.*;
-import hust.soict.ite6.oop.aims.store.Store;
+import javafx.stage.Stage;
 
 public class StoreScreen extends Application {
     private Store store;

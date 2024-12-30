@@ -1,9 +1,14 @@
-package hust.soict.ite6.oop.aims.media;
+package hust.soict.ite6.oop.aims.model.media;
 
 public abstract class Disc extends Media {
     private String director; // Director of the media (e.g., for DVD and CD)
     private int length;      // Length of the media in minutes
-
+    
+    //default constructor for disc
+    public Disc(String title) {
+        super(title);
+    }
+    
     // Constructor
     public Disc(String title, String category, float cost,  String director, int length) {
         super(title, category, cost); // Call the constructor of Media
@@ -11,7 +16,11 @@ public abstract class Disc extends Media {
         this.length = length;
     }
 
-    public String getDirector() {
+    public void setDirector(String director) {
+		this.director = director;
+	}
+
+	public String getDirector() {
         return director;
     }
 

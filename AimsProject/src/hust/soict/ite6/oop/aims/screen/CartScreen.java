@@ -3,12 +3,12 @@ package hust.soict.ite6.oop.aims.screen;
 import java.io.IOException;
 import java.util.Arrays;
 
-import hust.soict.ite6.oop.aims.cart.Cart;
-import hust.soict.ite6.oop.aims.media.Book;
-import hust.soict.ite6.oop.aims.media.CompactDisc;
-import hust.soict.ite6.oop.aims.media.DigitalVideoDisc;
-import hust.soict.ite6.oop.aims.media.Track;
-import hust.soict.ite6.oop.aims.store.Store;
+import hust.soict.ite6.oop.aims.controller.CartScreenController;
+import hust.soict.ite6.oop.aims.model.cart.Cart;
+import hust.soict.ite6.oop.aims.model.media.Book;
+import hust.soict.ite6.oop.aims.model.media.CompactDisc;
+import hust.soict.ite6.oop.aims.model.media.DigitalVideoDisc;
+import hust.soict.ite6.oop.aims.model.media.Track;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,7 +22,7 @@ public class CartScreen extends Application {
     public void start(Stage primaryStage) {
         try {
             // Load FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("cart.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/cart.fxml"));
             
             // Set controller with cart
             CartScreenController controller = new CartScreenController(cart);
