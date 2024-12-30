@@ -17,8 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <right>
       <BorderPane prefHeight="768.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <top>
@@ -85,8 +84,8 @@
                   </TableView>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0">
                     <buttons>
-                      <Button mnemonicParsing="false" text="Play" />
-                        <Button mnemonicParsing="false" text="Remove" />
+                      <Button fx:id="btnPlay" mnemonicParsing="false" onAction="#btnPlayPressed" text="Play" />
+                        <Button fx:id="btnRemove" mnemonicParsing="false" onAction="#btnRemovePressed" text="Remove" />
                     </buttons>
                   </ButtonBar>
                </children>
@@ -101,6 +100,11 @@
                   <Insets top="50.0" />
                </padding>
                <children>
+                  <Button mnemonicParsing="false" onAction="#btnPlaceOrderPressed" style="-fx-background-color: red;" text="Place Order" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
                   <HBox alignment="CENTER">
                      <children>
                         <Label lineSpacing="10.0" text="Total">
@@ -108,18 +112,13 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label text=" 0 $" textFill="AQUA">
+                        <Label fx:id="totalCostLabel" text=" 0 $" textFill="AQUA">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" style="-fx-background-color: red;" text="Place Order" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
                </children>
             </VBox>
          </right>
