@@ -6,12 +6,19 @@ import hust.soict.ite6.oop.aims.model.media.Playable;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 public class CartScreenController {
 	private Cart cart;
@@ -34,6 +41,15 @@ public class CartScreenController {
 	@FXML
 	private Button btnRemove;
 	
+    @FXML
+    private MenuItem addBookMenuItem;
+	
+    @FXML
+    private MenuItem addDvdMenuItem;
+    
+    @FXML
+    private MenuItem addCdMenuItem;
+    
 	@FXML 
 	private Label totalCostLabel;
 	
@@ -113,5 +129,86 @@ public class CartScreenController {
         alert.setContentText("Playing " + media.getTitle());
         
         alert.showAndWait();
+	}
+	
+	public void handleAddBook(ActionEvent event) {
+		try {
+			// Mở màn hình AddBookToCartDialog
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/ite6/oop/aims/view/AddBookToCartDialog.fxml"));
+			GridPane root = loader.load();
+			
+			// Lấy controller của AddBookToCartDialog và thiết lập giỏ hàng
+            AddBookToCartController addBookController = loader.getController();
+            addBookController.setCart(cart);
+            
+            // Tạo cửa sổ mới và hiển thị
+            Stage stage = new Stage();
+            stage.setTitle("Add Book");
+            stage.setScene(new Scene(root));
+            stage.show();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Failed to open Add Book window.");
+            alert.showAndWait();
+
+		}
+	}
+	
+	public void handleAddDvd(ActionEvent event) {
+		try {
+			// Mở màn hình AddDvdToCartDialog
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/ite6/oop/aims/view/AddDvdToCartDialog.fxml"));
+			GridPane root = loader.load();
+			
+			// Lấy controller của AddBookToCartDialog và thiết lập giỏ hàng
+            AddDvdToCartController addDvdController = loader.getController();
+            addDvdController.setCart(cart);
+            
+            // Tạo cửa sổ mới và hiển thị
+            Stage stage = new Stage();
+            stage.setTitle("Add Dvd");
+            stage.setScene(new Scene(root));
+            stage.show();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Failed to open Add Dvd window.");
+            alert.showAndWait();
+
+		}
+	}
+	
+	public void handleAddCd(ActionEvent event) {
+		try {
+			// Mở màn hình AddDvdToCartDialog
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/hust/soict/ite6/oop/aims/view/AddCdToCartDialog.fxml"));
+			GridPane root = loader.load();
+			
+			// Lấy controller của AddBookToCartDialog và thiết lập giỏ hàng
+            AddCdToCartController addCdController = loader.getController();
+            addCdController.setCart(cart);
+            
+            // Tạo cửa sổ mới và hiển thị
+            Stage stage = new Stage();
+            stage.setTitle("Add Cd");
+            stage.setScene(new Scene(root));
+            stage.show();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Failed to open Add Cd window.");
+            alert.showAndWait();
+
+		}
 	}
 }

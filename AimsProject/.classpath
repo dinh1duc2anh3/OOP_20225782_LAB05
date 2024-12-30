@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="Design/|Requirement/" kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
 	<classpathentry exported="true" kind="lib" path="D:/STUDY/JAVAFX/javafx-sdk-23.0.1/lib/javafx.base.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
