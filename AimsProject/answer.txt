@@ -1,0 +1,5 @@
+- The Aims class must be updated to handle any exceptions generated when the play() methods are called. What happens when you don’t update for them to catch?
+
+If you don't update the Aims class to catch exceptions when calling play(), the program will crash when an exception occurs, leading to an unhandled error, poor user experience, and potential resource leaks. Handling exceptions ensures the program continues running smoothly and provides feedback when issues arise.
+
+
