@@ -1,5 +1,11 @@
 package hust.soict.ite6.oop.aims;
 
+import hust.soict.ite6.oop.aims.exception.CartFullException;
+import hust.soict.ite6.oop.aims.exception.MediaAlreadyInCartException;
+import hust.soict.ite6.oop.aims.exception.MediaAlreadyInStoreException;
+import hust.soict.ite6.oop.aims.exception.MediaNotFoundException;
+import hust.soict.ite6.oop.aims.exception.PlayerException;
+import hust.soict.ite6.oop.aims.exception.StoreFullException;
 import hust.soict.ite6.oop.aims.model.cart.Cart;
 import hust.soict.ite6.oop.aims.model.media.Book;
 import hust.soict.ite6.oop.aims.model.media.CompactDisc;
@@ -19,7 +25,7 @@ public class Aims {
 	//  Thêm book vào Store
 	
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalArgumentException, StoreFullException, MediaAlreadyInStoreException, MediaNotFoundException, CartFullException, MediaAlreadyInCartException, PlayerException {
         Scanner scanner = new Scanner(System.in);
 
         // Display the main menu
@@ -96,7 +102,7 @@ public class Aims {
     }
 
     // Option 1: View store
-    public static void viewStore(Scanner scanner) {
+    public static void viewStore(Scanner scanner) throws MediaNotFoundException, CartFullException, MediaAlreadyInCartException, PlayerException {
         while (true) {
             storeMenu();
             int choice = scanner.nextInt();
@@ -178,7 +184,7 @@ public class Aims {
     }
 
     // Option 2: Update store
-    public static void updateStore(Scanner scanner) {
+    public static void updateStore(Scanner scanner) throws IllegalArgumentException, StoreFullException, MediaAlreadyInStoreException, MediaNotFoundException {
         System.out.println("Store Update Options: ");
         System.out.println("1. Add media");
         System.out.println("2. Remove media");
@@ -202,7 +208,7 @@ public class Aims {
     }
 
     // Option 3: See current cart
-    public static void seeCurrentCart(Scanner scanner) {
+    public static void seeCurrentCart(Scanner scanner) throws MediaNotFoundException {
         while (true) {
             cartMenu();
             int choice = scanner.nextInt();
@@ -279,7 +285,7 @@ public class Aims {
     
     
     
-    public static void addMediaToStore(Scanner scanner) {
+    public static void addMediaToStore(Scanner scanner) throws IllegalArgumentException, StoreFullException, MediaAlreadyInStoreException {
         System.out.println("Enter the type of media (Book/DVD/CD): ");
         String type = scanner.nextLine().trim();
 
@@ -337,7 +343,7 @@ public class Aims {
         }
     }
     
-    public static void removeMediaFromStore(Scanner scanner) {
+    public static void removeMediaFromStore(Scanner scanner) throws MediaNotFoundException {
         String title = getTitle(scanner);
         Media media = store.search(title);
 
@@ -349,7 +355,7 @@ public class Aims {
         }
     }
     
-    public static void addMediaToCart(Scanner scanner) {
+    public static void addMediaToCart(Scanner scanner) throws IllegalArgumentException, CartFullException, MediaAlreadyInCartException {
         System.out.println("Enter the type of media (Book/DVD/CD): ");
         String type = scanner.nextLine().trim();
         
@@ -408,7 +414,7 @@ public class Aims {
     }
     
     
-    public static void removeMediaFromCart(Scanner scanner) {
+    public static void removeMediaFromCart(Scanner scanner) throws MediaNotFoundException {
         String title = getTitle(scanner);
         Media media = cart.search(title);
 
