@@ -25,6 +25,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import hust.soict.ite6.oop.aims.exception.CartFullException;
+import hust.soict.ite6.oop.aims.exception.MediaAlreadyInCartException;
+import hust.soict.ite6.oop.aims.exception.MediaAlreadyInStoreException;
+import hust.soict.ite6.oop.aims.exception.StoreFullException;
 import hust.soict.ite6.oop.aims.model.cart.Cart;
 import hust.soict.ite6.oop.aims.model.media.Book;
 import hust.soict.ite6.oop.aims.model.media.CompactDisc;
@@ -33,6 +37,7 @@ import hust.soict.ite6.oop.aims.model.media.Media;
 import hust.soict.ite6.oop.aims.model.media.Playable;
 import hust.soict.ite6.oop.aims.model.media.Track;
 import hust.soict.ite6.oop.aims.model.store.Store;
+import javafx.collections.ObservableList;
 
 
 //ban dung awt
@@ -116,7 +121,7 @@ public class StoreScreenOld extends JFrame {
         center.setLayout(new GridLayout(3, 3, 2, 2));
 
         // Lấy danh sách các media từ store
-        ArrayList<Media> mediaInStore = store.getItemsInStore() ;
+        ObservableList<Media> mediaInStore = store.getItemsInStore() ;
         for (int i = 0; i < 9 && i < mediaInStore.size(); i++) {  // Đảm bảo không vượt quá giới hạn
             Media media = mediaInStore.get(i);
             MediaStore cell = new MediaStore(media);
@@ -155,7 +160,15 @@ public class StoreScreenOld extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					cart.addMedia(media);
+					try {
+						cart.addMedia(media);
+					} catch (CartFullException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (MediaAlreadyInCartException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					System.out.println("Added to cart: " + media.getTitle());
 				}
             	
@@ -206,7 +219,15 @@ public class StoreScreenOld extends JFrame {
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Avatar", "Fantasy", 25.0f, "James Cameron", 162);
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Titanic", "Romance", 22.0f, "James Cameron", 195);
 
-        store.addMedia(dvd1, dvd2, dvd3);
+        try {
+			store.addMedia(dvd1, dvd2, dvd3);
+		} catch (StoreFullException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MediaAlreadyInStoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
         // Add CompactDisc to the store
         CompactDisc cd = new CompactDisc("Thriller", "Pop", 15.0f, "Quincy Jones", "Michael Jackson", 0);
@@ -214,11 +235,27 @@ public class StoreScreenOld extends JFrame {
         cd.addTrack(new Track("Thriller", 7));
         cd.setLength(cd.getLength());
         
-        store.addMedia(cd);
+        try {
+			store.addMedia(cd);
+		} catch (StoreFullException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MediaAlreadyInStoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
         // Add Book to the store
         Book book = new Book("Effective Java", "Programming", 45.0f, Arrays.asList("Joshua Bloch"));
-        store.addMedia(book);
+        try {
+			store.addMedia(book);
+		} catch (StoreFullException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MediaAlreadyInStoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
         new StoreScreenOld(store,cart);
         

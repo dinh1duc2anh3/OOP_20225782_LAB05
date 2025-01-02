@@ -1,5 +1,8 @@
 package hust.soict.ite6.oop.aims.controller;
 
+import hust.soict.ite6.oop.aims.exception.CartFullException;
+import hust.soict.ite6.oop.aims.exception.MediaAlreadyInCartException;
+import hust.soict.ite6.oop.aims.exception.MediaNotFoundException;
 import hust.soict.ite6.oop.aims.model.cart.Cart;
 import hust.soict.ite6.oop.aims.model.media.DigitalVideoDisc;
 import javafx.fxml.FXML;
@@ -31,7 +34,7 @@ public class AddDvdToCartController {
     
     
     @FXML
-    public void handleAddDvd() {
+    public void handleAddDvd() throws MediaNotFoundException, CartFullException, MediaAlreadyInCartException {
     	
     	String title = titleField.getText();
     	String category = categoryField.getText();

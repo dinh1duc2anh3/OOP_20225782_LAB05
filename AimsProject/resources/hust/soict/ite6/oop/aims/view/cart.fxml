@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hust.soict.ite6.oop.aims.controller.CartScreenController">
    <right>
       <BorderPane prefHeight="768.0" prefWidth="1024.0" BorderPane.alignment="CENTER">
          <top>
@@ -30,12 +30,11 @@
                             <Menu mnemonicParsing="false" text="Update Store">
                               <items>
                                 <MenuItem fx:id="addBookMenuItem" mnemonicParsing="false" onAction="#handleAddBook" text="Add Book" />
-                                    <MenuItem mnemonicParsing="false" text="Add CD" />
-                                    <MenuItem mnemonicParsing="false" text="Add DVD" />
+                                    <MenuItem fx:id="addCdMenuItem" mnemonicParsing="false" onAction="#handleAddCd" text="Add CD" />
+                                    <MenuItem fx:id="addDvdMenuItem" mnemonicParsing="false" onAction="#handleAddDvd" text="Add DVD" />
                               </items>
                             </Menu>
-                            <Menu mnemonicParsing="false" text="Vew Store" />
-                              <Menu mnemonicParsing="false" text="View Cart" />
+                              <MenuItem fx:id="viewStoreMenuItem" mnemonicParsing="false" onAction="#handleViewStore" text="View Store" />
                            </items>
                       </Menu>
                     </menus>

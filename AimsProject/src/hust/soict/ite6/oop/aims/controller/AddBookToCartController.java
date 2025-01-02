@@ -4,6 +4,9 @@ import java.net.ResponseCache;
 import java.util.ArrayList;
 import java.util.List;
 
+import hust.soict.ite6.oop.aims.exception.CartFullException;
+import hust.soict.ite6.oop.aims.exception.MediaAlreadyInCartException;
+import hust.soict.ite6.oop.aims.exception.MediaNotFoundException;
 import hust.soict.ite6.oop.aims.model.cart.Cart;
 import hust.soict.ite6.oop.aims.model.media.Book;
 import javafx.fxml.FXML;
@@ -31,7 +34,7 @@ public class AddBookToCartController {
     
     
     @FXML
-    public void handleAddBook() {
+    public void handleAddBook() throws MediaNotFoundException, CartFullException, MediaAlreadyInCartException {
     	
     	String title = titleField.getText();
     	String category = categoryField.getText();

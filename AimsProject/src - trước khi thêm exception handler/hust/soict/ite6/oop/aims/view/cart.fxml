@@ -34,7 +34,7 @@
                                     <MenuItem fx:id="addDvdMenuItem" mnemonicParsing="false" onAction="#handleAddDvd" text="Add DVD" />
                               </items>
                             </Menu>
-                            <Menu mnemonicParsing="false" text="Vew Store" />
+                            <Menu mnemonicParsing="false" text="View Store" />
                               <Menu mnemonicParsing="false" text="View Cart" />
                            </items>
                       </Menu>
